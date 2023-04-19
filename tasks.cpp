@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 using std::string;
 
@@ -12,7 +13,12 @@ class Tasks {
         Tasks(string title, string description, int priority)
         : _title(title), _description(description), _priority(priority)
         {}
-        void WriteTitleToFile        
+        
+        void WriteTaskToFile() {
+            ofstream saveFile;
+            
+        }
+        
         ~Tasks();
 };
 
