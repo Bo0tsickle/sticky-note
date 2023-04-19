@@ -1,25 +1,24 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Tasks.h"
 using std::string;
 
-class Tasks {
-    private:
-        string _title = "NULL";
-        string _description = "NULL";
-        int _priority = 0;
-    
-    public:
-        Tasks(string title, string description, int priority)
-        : _title(title), _description(description), _priority(priority)
-        {}
-        
-        void WriteTaskToFile() {
-            ofstream saveFile;
-            
-        }
-        
-        ~Tasks();
-};
-
 tasks::~Tasks() {}
+
+Tasks(string title, string description, int priority) {
+
+}
+
+void SetStuff(string title, string description, int priority) {
+    _title = title;
+    _description = description 
+    _priority = priority
+}
+        
+void WriteTaskToFile() {
+    ofstream saveFile;
+    saveFile.open("task.txt");
+    saveFile.write("test");
+    saveFile.close();
+}
