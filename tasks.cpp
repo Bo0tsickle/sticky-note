@@ -11,7 +11,7 @@ class tasks {
     public:
         tasks(string title, string description, int priority)
         : _title(title), _description(description), _priority(priority)
-    {}
+        {}
         ~tasks();
 };
 
