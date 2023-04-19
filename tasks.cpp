@@ -9,9 +9,9 @@ Tasks::Tasks(std::string title, std::string description, int priority) {
 }
 
 void Tasks::SetTasks(string title, string description, int priority) {
-    _title = title;
-    _description = description ;
-    _priority = priority;
+    m_title = title;
+    m_description = description ;
+    m_priority = priority;
 }
         
 void Tasks::WriteTaskToFile() {
