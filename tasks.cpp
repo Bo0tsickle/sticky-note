@@ -1,17 +1,18 @@
 #include <iostream>
 #include <string>
+using std::string;
 
 class tasks {
     private:
-    std::string title = "NULL";
-    std::string description = "NULL";
-    int priority = 0;
+    string _title = "NULL";
+    string _description = "NULL";
+    int _priority = 0;
     
     public:
-        tasks(/* args */);
+        tasks(string title, string description, int priority)
+        : _title(title), _description(description), _priority(priority)
+    {}
         ~tasks();
 };
 
-tasks::tasks(/* args */) {
-
-}
+tasks::~tasks() {}
