@@ -4,21 +4,21 @@
 #include "Tasks.h"
 using std::string;
 
-tasks::~Tasks() {}
-
-Tasks(string title, string description, int priority) {
-
+Tasks::Tasks(std::string title, std::string description, int priority) {
+    SetTasks(title, description, priority);
 }
 
-void SetStuff(string title, string description, int priority) {
+void Tasks::SetTasks(string title, string description, int priority) {
     _title = title;
-    _description = description 
-    _priority = priority
+    _description = description ;
+    _priority = priority;
 }
         
-void WriteTaskToFile() {
-    ofstream saveFile;
+void Tasks::WriteTaskToFile() {
+    std::ofstream saveFile;
     saveFile.open("task.txt");
-    saveFile.write("test");
+    saveFile << "test";
     saveFile.close();
 }
+
+Tasks::~Tasks() {}
