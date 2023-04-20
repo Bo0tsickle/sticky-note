@@ -17,6 +17,6 @@ void Tasks::SetTasks(string title, string description, int priority) {
 void Tasks::WriteTaskToFile() {
     std::ofstream saveFile;
     saveFile.open("task.txt");
-    saveFile << "test";
+    saveFile << "title: " << Tasks::m_title << "\ndes: " << Tasks::m_description << "\npriority: " << Tasks::m_priority << "\n\n";
     saveFile.close();
 }

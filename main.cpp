@@ -26,7 +26,7 @@ int getPriority() {
     string tempPriority;
     int priority;
 
-    cout << "Enter your priority";
+    cout << "Enter your priority: ";
     cin >> tempPriority;
     
     // convert string priority to an integer
@@ -57,7 +57,7 @@ int main() {
     }
     else {
         task.WriteTaskToFile();
-        cout << "Note Created!";
+        cout << "Note Created!\n";
     }
 
     task.~Tasks();
