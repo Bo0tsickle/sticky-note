@@ -2,34 +2,30 @@
 #include "Tasks.h"
 using namespace std;
 
-int main() {
-    cout << "Welcome to the sticky notes app! Press: \n(1) Create Note\n(2) Delete Note\n(3) List Notes\n";
-
-    Tasks task = getInput();
-
-    if (task.m_priority == -1) {
-        cout << "Priority should be a number!";
-        return 0;
-    }
-    else {
-        task.WriteTaskToFile();
-        cout << "Note Created!";
-    }
-
-    task.~Tasks();
-    return 0;
-}
-
-Tasks getInput() {
+string getTitle() {
     string title;
-    string description;
-    string tempPriority;
-    int priority;
 
     cout << "Enter your title: ";
     cin >> title;
+
+    return title;
+}
+
+string getDescription() {
+    string description;
+
     cout << "Enter your description: ";
     cin >> description;
+
+    return description;
+}
+
+
+
+int getPriority() {
+    string tempPriority;
+    int priority;
+
     cout << "Enter your priority";
     cin >> tempPriority;
     
@@ -47,7 +43,23 @@ Tasks getInput() {
         priority = -1;
     }
 
-    Tasks task = Tasks(title, description, priority);
+    return priority;
+}
 
-    return task;
+int main() {
+    cout << "Welcome to the sticky notes app! Press: \n(1) Create Note\n(2) Delete Note\n(3) List Notes\n";
+
+    Tasks task = Tasks(getTitle(), getDescription(), getPriority());
+
+    if (task.m_priority == -1) {
+        cout << "Priority should be a number!";
+        return 0;
+    }
+    else {
+        task.WriteTaskToFile();
+        cout << "Note Created!";
+    }
+
+    task.~Tasks();
+    return 0;
 }

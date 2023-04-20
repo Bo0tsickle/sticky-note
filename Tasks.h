@@ -10,8 +10,4 @@ class Tasks {
         Tasks(std::string title, std::string description, int priority);
         void SetTasks(std::string title, std::string description, int priority);
         void WriteTaskToFile();
-
-        int getPriority();
-        string getTitle();
-        string getDescription();
 };
