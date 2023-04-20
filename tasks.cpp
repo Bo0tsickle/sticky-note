@@ -20,5 +20,3 @@ void Tasks::WriteTaskToFile() {
     saveFile << "test";
     saveFile.close();
 }
-
-Tasks::~Tasks() {}
