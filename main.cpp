@@ -39,7 +39,7 @@ int getPriority() {
     catch( exception ) {
         priority = -1;
     }
-    if ( ( priority < 1) && ( priority > 3) ) {
+    if ( ( priority < 1) || ( priority > 3) ) {
         priority = -1;
     }
 
@@ -52,7 +52,7 @@ int main() {
     Tasks task = Tasks(getTitle(), getDescription(), getPriority());
 
     if (task.m_priority == -1) {
-        cout << "Priority should be a number!";
+        cout << "Priority should be a valid number between one and nine!\n";
         return 0;
     }
     else {
