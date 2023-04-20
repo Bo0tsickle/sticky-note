@@ -26,7 +26,7 @@ int getPriority() {
     string tempPriority;
     int priority;
 
-    cout << "Enter your priority: ";
+    cout << "Enter your priority as a number from 1 to 9: ";
     cin >> tempPriority;
     
     // convert string priority to an integer
@@ -39,7 +39,7 @@ int getPriority() {
     catch( exception ) {
         priority = -1;
     }
-    if ( ( priority < 1) || ( priority > 3) ) {
+    if ( ( priority < 1) || ( priority > 9 )) {
         priority = -1;
     }
 
