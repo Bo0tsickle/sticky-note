@@ -7,7 +7,14 @@ int main() {
 
     Tasks task = getInput();
 
-    
+    if (task.m_priority == -1) {
+        cout << "Priority should be a number!";
+        return 0;
+    }
+    else {
+        task.WriteTaskToFile();
+        cout << "Note Created!";
+    }
 
     task.~Tasks();
     return 0;
@@ -35,7 +42,6 @@ Tasks getInput() {
     }
     catch( exception ) {
         priority = -1;
-        __throw_invalid_argument("Not a number!");
     }
     if ( ( priority < 1) && ( priority > 3) ) {
         priority = -1;
