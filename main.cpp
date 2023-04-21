@@ -5,16 +5,16 @@ using namespace std;
 
 
 int main() {
-
-    Note note = Note(getTitle(), getDescription(), getPriority());
-
     int input = getInput();
-    if (input == -1) {
-        cout << "Invalid input!";
-        return 0;
-    }
+        if (input == -1) {
+            cout << "Invalid input!";
+            return 0;
+        }
+
+
 
     if (input == 1) {
+        Note note = Note(getTitle(), getDescription(), getPriority());
         if (note.m_priority == -1) {
             cout << "Priority should be a valid number between one and nine!\n";
             return 0;
@@ -23,11 +23,11 @@ int main() {
             note.WriteNoteToFile();
             cout << "Note Created!\n";
         }
+        note.~Note();
     }
-    else if (input == 2) {
+    else if (input == 3) {
         printNotes();
     }
 
-    note.~Note();
     return 0;
 }

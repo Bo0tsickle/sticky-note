@@ -17,6 +17,6 @@ void Note::SetNote(string title, string description, int priority) {
 void Note::WriteNoteToFile() {
     std::ofstream saveFile;
     saveFile.open("task.txt");
-    saveFile << "title: " << Note::m_title << "\ndes: " << Note::m_description << "\npriority: " << Note::m_priority << "\n\n";
+    saveFile << "Title: " << Note::m_title << "\nDescription: " << Note::m_description << "\nPriority: " << Note::m_priority << "\n\n";
     saveFile.close();
 }
