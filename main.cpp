@@ -1,23 +1,33 @@
 #include <iostream>
 #include "Note.h"
-#include "other.h"
+#include "Extra.h"
 using namespace std;
 
 
 int main() {
-    cout << "Welcome to the sticky notes app! Press: \n(1) Create Note\n(2) Delete Note\n(3) List Notes\n";
 
-    Note task = Note(getTitle(), getDescription(), getPriority());
+    Note note = Note(getTitle(), getDescription(), getPriority());
 
-    if (task.m_priority == -1) {
-        cout << "Priority should be a valid number between one and nine!\n";
+    int input = getInput();
+    if (input == -1) {
+        cout << "Invalid input!";
         return 0;
     }
-    else {
-        task.WriteTaskToFile();
-        cout << "Note Created!\n";
+
+    if (input == 1) {
+        if (note.m_priority == -1) {
+            cout << "Priority should be a valid number between one and nine!\n";
+            return 0;
+        }
+        else {
+            note.WriteNoteToFile();
+            cout << "Note Created!\n";
+        }
+    }
+    else if (input == 2) {
+        printNotes();
     }
 
-    task.~Note();
+    note.~Note();
     return 0;
 }
