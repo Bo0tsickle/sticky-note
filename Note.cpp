@@ -21,24 +21,3 @@ void Note::WriteNoteToFile() {
     saveFile.close();
 }
 
-void Note::DeleteNote(string title) {
-    string noteToDelete;
-    string line;
-    cout << "Please enter the title of the note you wish to remove: ";
-    cin >> noteToDelete;
-
-    fstream saveFile;
-    fstream temp;
-    temp.open("temp.txt");
-    saveFile.open("notes.txt");
-    while (getline(saveFile, line)) {
-        line.replace(line.find(noteToDelete), noteToDelete.length(), "");
-        temp << line << endl;
-    }
-
-    temp.close();
-    saveFile.close();
-
-    remove("saveFile.txt");
-    rename("temp.txt", "notes.txt");
-}

@@ -5,3 +5,4 @@ std::string getDescription();
 int getPriority();
 void printNotes();
 int getInput();
+void DeleteNote();
