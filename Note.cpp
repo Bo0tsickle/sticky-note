@@ -2,9 +2,9 @@
 #include <fstream>
 #include <string>
 #include "Note.h"
-using std::string;
+using namespace std;
 
-Note::Note(std::string title, std::string description, int priority) {
+Note::Note(string title, string description, int priority) {
     Note::SetNote(title, description, priority);
 }
 
@@ -15,8 +15,8 @@ void Note::SetNote(string title, string description, int priority) {
 }
         
 void Note::WriteNoteToFile() {
-    std::ofstream saveFile;
-    saveFile.open("task.txt");
+    ofstream saveFile;
+    saveFile.open("notes.txt");
     saveFile << "Title: " << Note::m_title << "\nDescription: " << Note::m_description << "\nPriority: " << Note::m_priority << "\n\n";
     saveFile.close();
 }

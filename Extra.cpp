@@ -7,7 +7,7 @@ using namespace std;
 void printNotes() {
     string line;
     ifstream save;
-    save.open( "task.txt" );
+    save.open( "notes.txt" );
     while ( std::getline(save, line) ) {
         cout << line << "\n";
     }
