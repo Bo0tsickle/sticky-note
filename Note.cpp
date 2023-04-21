@@ -20,3 +20,8 @@ void Note::WriteNoteToFile() {
     saveFile << "Title: " << Note::m_title << "\nDescription: " << Note::m_description << "\nPriority: " << Note::m_priority << "\n\n";
     saveFile.close();
 }
+
+void Note::DeleteNote(string title) {
+    ofstream saveFile;
+    saveFile.open()
+}
