@@ -9,5 +9,5 @@ class Note {
 
         Note(std::string title, std::string description, int priority);
         void SetNote(std::string title, std::string description, int priority);
-        void WriteNoteToFile();
+        void WriteNoteToFile(Note note);
 };

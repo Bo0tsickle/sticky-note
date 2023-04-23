@@ -14,9 +14,8 @@ void Note::SetNote(string title, string description, int priority) {
     Note::m_priority = priority;
 }
         
-void Note::WriteNoteToFile() {
-    ofstream saveFile;
-    saveFile.open("notes.txt");
+void Note::WriteNoteToFile(Note note) {
+    ofstream saveFile(note.m_title + ".txt");
     saveFile << "Title: " << Note::m_title << "\nDescription: " << Note::m_description << "\nPriority: " << Note::m_priority << "\n\n";
     saveFile.close();
 }
